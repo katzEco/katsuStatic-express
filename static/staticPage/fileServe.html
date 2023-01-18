@@ -7,6 +7,7 @@
     <title>{directory} | katsuServe</title>
 
     <link rel="stylesheet" href="/mainCSS">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/waterfall.js/1.0.2/waterfall.min.js"></script>
   </head>
   <body>
     <div class="nav flex f-row">
@@ -63,11 +64,28 @@
       });
 
       if (fileCount == imgCount) {
-        inp.innerHTML = rtnData
-      }
+        document.querySelector('main').innerHTML = `<div id="waterfall">${rtnData}</div>`
+        // document.querySelector('#waterfall').classList.add('flex')
+        // document.querySelector('#waterfall').classList.add('f-row')
 
-      // console.log(inpAry.reverse().join('').replaceAll('</li>', ''));
-      // console.log(rtnData);
+        function resizeGridItem(item){
+          grid = document.querySelector("#waterfall");
+          rowHeight = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-auto-rows'));
+          rowGap = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-row-gap'));
+          rowSpan = Math.ceil((item.querySelector('.content').getBoundingClientRect().height+rowGap)/(rowHeight+rowGap));
+          item.style.gridRowEnd = "span "+rowSpan;
+        }
+
+        function resizeAllGridItems(){
+          allItems = document.getElementsByClassName("imgCover");
+          for(x=0;x<allItems.length;x++){
+              resizeGridItem(allItems[x]);
+          }
+        }
+
+        resizeAllGridItems();
+        window.addEventListener("resize", resizeAllGridItems);
+      }
     </script>
   </body>
 </html>

@@ -44,12 +44,38 @@ a.nav-link:hover {
 }
 
 main {
-  width: 80%;
+  width: 80% !important;
   margin-top: 1rem;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 5rem;
   text-align: left;
+  columns: 45%;
+  column-gap: 10px;
+}
+
+#waterfall {
+  width: 100%;
+  height: auto;
+  display: grid !important;
+  text-align: center !important;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fill, 40%);
+  justify-content: center;
+}
+
+div.imgCover {
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+}
+
+div.imgCover img {
+  width: 100%;
+  height: auto;
+  break-inside: avoid;
+  border-radius: 1rem;
+  display: block;
 }
 
 ul#files {
