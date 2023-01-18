@@ -9,11 +9,27 @@
     <link rel="stylesheet" href="/mainCSS">
   </head>
   <body>
-    <div class="nav">
-
+    <div class="nav flex f-row">
+      <ul class="left-part">
+        <a href="/" class="nav-link">
+          <li class="nav-item">
+            katsuServe
+          </li>
+        </a>
+        <li class="nav-item">
+          {directory}
+        </li>
+      </ul>
+      <ul class="right-part flex f-row">
+        <a href="/about" class="nav-link">
+          <li class="nav-item">
+            About
+          </li>
+        </a>
+      </ul>
     </div>
     <main>
-      
+      {files}
     </main>
     <footer>
       Made w/ 🤍 by <a href="https://suphakit.net/" target="_blank">Suphakit P.</a> &copy; 2023

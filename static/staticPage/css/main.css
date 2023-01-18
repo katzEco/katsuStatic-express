@@ -9,9 +9,54 @@ main {
   margin-bottom: 2rem;
 }
 
+.nav {
+  background-color: #ff6f61;
+}
+
+.left-part, .right-part {
+  width: 100%;
+  list-style-type: none !important;
+  padding: 0;
+  margin: 0;
+}
+
+.left-part .nav-item, .right-part .nav-item {
+  padding: 1rem;
+  margin: 0;
+  background-color: #ff6f61;
+  display: inline-block;
+}
+
+.right-part {
+  justify-content: end;
+}
+
+a.nav-link {
+  color: whitesmoke;
+  text-decoration: none;
+  transition: all .3s;
+  font-weight: bold;
+}
+
+a.nav-link:hover {
+  opacity: .6;
+}
+
 footer {
   width: 100%;
+  position: fixed;
+  text-align: center;
   bottom: 0;
   padding: 1rem 0;
   background-color: rgba(0, 0, 0, 0.6);
+}
+
+footer a {
+  color: whitesmoke;
+  transition: all .3s;
+}
+
+footer a:hover {
+  text-decoration: none;
+  opacity: .8;
 }
