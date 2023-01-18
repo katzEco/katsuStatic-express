@@ -1,0 +1,17 @@
+@import url('https://cdn.katsuragi.cyou/fonts/TH/LINEseed-Regular');
+@import url('https://dethmastery.github.io/katsuStrap/cdn/katsuStrap.css');
+
+body, html, a, p, span, input, div, h1, h2, h3, h4, h5 {
+  font-family: 'LINEseed-Regular', sans-serif !important;
+}
+
+main {
+  margin-bottom: 2rem;
+}
+
+footer {
+  width: 100%;
+  bottom: 0;
+  padding: 1rem 0;
+  background-color: rgba(0, 0, 0, 0.6);
+}
