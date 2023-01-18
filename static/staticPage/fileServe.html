@@ -34,5 +34,40 @@
     <footer>
       Made w/ 🤍 by <a href="https://suphakit.net/" target="_blank">Suphakit P.</a> &copy; 2023
     </footer>
+
+    <script>
+      let inp = document.querySelector('#files')
+      let inpAry = inp.innerHTML.split('<li>').reverse()
+      inpAry.pop()
+      inpAry.pop()
+      let rtnData = ''
+      let fileCount = 0
+      let imgCount = 0
+      
+      inpAry.forEach(inpItem => {
+        let imgRp = inpItem.replace('a href', 'div class="imgCover"><img src').replace(' class=""', '').replace('</li>', '').replace('</a>', '')
+        let rpData = imgRp.replace(/title.*/, '/></div>')
+        let fileExt = rpData.slice(rpData.lastIndexOf('.') + 1, rpData.lastIndexOf('"'))
+
+        if (fileExt == 'jpg' || fileExt == 'png') {
+          imgCount = parseInt(imgCount) + 1
+        } 
+
+        if (rtnData != '') {
+          rtnData = rtnData + rpData
+        } else {
+          rtnData = rpData
+        }
+
+        fileCount = parseInt(fileCount) + 1;
+      });
+
+      if (fileCount == imgCount) {
+        inp.innerHTML = rtnData
+      }
+
+      // console.log(inpAry.reverse().join('').replaceAll('</li>', ''));
+      // console.log(rtnData);
+    </script>
   </body>
 </html>
