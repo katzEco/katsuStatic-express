@@ -50,8 +50,6 @@ main {
   margin-right: auto;
   margin-bottom: 5rem;
   text-align: left;
-  columns: 45%;
-  column-gap: 10px;
 }
 
 #waterfall {
